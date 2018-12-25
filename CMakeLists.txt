@@ -39,12 +39,17 @@ if(UUID_LIBRARY)
 	target_link_libraries(uuidpp-shared ${UUID_LIBRARY})
 endif()
 
-
 install(TARGETS
 	uuidpp-static
 	uuidpp-shared
 	ARCHIVE DESTINATION lib
 	LIBRARY DESTINATION lib
+	)
+
+add_executable(uuid-filter uuid-filter.cc)
+target_link_libraries(uuid-filter uuidpp-shared)
+install(TARGETS uuid-filter
+	RUNTIME DESTINATION bin
 	)
 
 foreach(header ${${PROJECT_NAME}_HEADERS})
