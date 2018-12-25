@@ -1,7 +1,6 @@
 #include "uuidpp.h"
 
 #include <cassert>
-#include <stdexcept>
 
 #include <cstring>
 #include <iostream>
